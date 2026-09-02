@@ -5,8 +5,8 @@ public class CarController : MonoBehaviour
     private CarBasicMovement controls;
 
     [SerializeField] Rotatable streeringWheel;
-    [SerializeField] float acceleration = 3000f;
-    [SerializeField] float breakingForce = 1500f;
+    [SerializeField] float acceleration = 300f;
+    [SerializeField] float breakingForce = 300f;
     [SerializeField] float maxTurnAngle = 30f;
     [SerializeField] float maxWheelRotation = 90f;
 
@@ -46,7 +46,7 @@ public class CarController : MonoBehaviour
         currentAcceleration = acceleration * controls.Player.Move.ReadValue<Vector2>().y; 
        
 
-        Debug.Log(controls.Player.Move.ReadValue<Vector2>().y);
+        Debug.Log(controls.Player.Move.ReadValue<Vector2>().y + " | CA:  " + currentAcceleration);
         frontRight.motorTorque = currentAcceleration;
         frontLeft.motorTorque = currentAcceleration;
 
@@ -68,7 +68,7 @@ public class CarController : MonoBehaviour
          );
 
         currentTurnAngle = maxTurnAngle * steeringInput;
-        Debug.Log("Wheel: " + streeringWheel.CurrentWheelRotation +" | Turn: " + currentTurnAngle);
+        // Debug.Log("Wheel: " + streeringWheel.CurrentWheelRotation +" | Turn: " + currentTurnAngle);
        
         frontLeft.steerAngle = currentTurnAngle;
         frontRight.steerAngle = currentTurnAngle;

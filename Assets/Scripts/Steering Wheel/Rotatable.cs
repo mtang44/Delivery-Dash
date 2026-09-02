@@ -53,7 +53,7 @@ public class Rotatable : MonoBehaviour
             yield return null;
         }
          // Snap wheel back to 90 degrees
-        transform.localEulerAngles = new Vector3(
+            transform.localEulerAngles = new Vector3(
             90f,
             transform.localEulerAngles.y,
             transform.localEulerAngles.z
