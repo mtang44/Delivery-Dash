@@ -4,9 +4,11 @@ public class CarController : MonoBehaviour
 {
     private CarBasicMovement controls;
 
+    [SerializeField] Rotatable streeringWheel;
     [SerializeField] float acceleration = 3000f;
     [SerializeField] float breakingForce = 1500f;
     [SerializeField] float maxTurnAngle = 30f;
+    [SerializeField] float maxWheelRotation = 90f;
 
     [SerializeField] WheelCollider frontRight;
     [SerializeField] WheelCollider frontLeft;
@@ -41,8 +43,9 @@ public class CarController : MonoBehaviour
         
         // Debug.Log(controls.Player.Move.ReadValue<Vector2>());
         // handling acceleration
-        currentAcceleration = acceleration * controls.Player.Move.ReadValue<Vector2>().y;
-        
+        currentAcceleration = acceleration * controls.Player.Move.ReadValue<Vector2>().y; 
+       
+
         Debug.Log(controls.Player.Move.ReadValue<Vector2>().y);
         frontRight.motorTorque = currentAcceleration;
         frontLeft.motorTorque = currentAcceleration;
@@ -56,8 +59,17 @@ public class CarController : MonoBehaviour
 
 
         //handling turning
-        currentTurnAngle = maxTurnAngle * controls.Player.Move.ReadValue<Vector2>().x;
+        // currentTurnAngle = maxTurnAngle * controls.Player.Move.ReadValue<Vector2>().x; // used to check a d handling
 
+       float steeringInput = Mathf.Clamp(
+        streeringWheel.CurrentWheelRotation / 90f,
+        -1f,
+        1f
+         );
+
+        currentTurnAngle = maxTurnAngle * steeringInput;
+        Debug.Log("Wheel: " + streeringWheel.CurrentWheelRotation +" | Turn: " + currentTurnAngle);
+       
         frontLeft.steerAngle = currentTurnAngle;
         frontRight.steerAngle = currentTurnAngle;
 

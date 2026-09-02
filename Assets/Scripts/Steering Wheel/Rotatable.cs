@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 using System.Collections;
 public class Rotatable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+   
     [SerializeField] private InputAction pressed, rotationAxis;
-    
     [SerializeField] private float rotationSpeed;
 
     [SerializeField] private float maxRightRotationAngle, maxLeftRotationAngle;
@@ -13,7 +13,9 @@ public class Rotatable : MonoBehaviour
     private bool rotateAllowed;
     private float currentWheelRotation; 
     
+     public float CurrentWheelRotation => currentWheelRotation; // allows for currentWheelRotation to be accessed by other scripts without giving direct access to variable itself
 
+    
     private void Awake()
     {
 
@@ -27,27 +29,18 @@ public class Rotatable : MonoBehaviour
     }
     void Update()
     {
-    
-        currentWheelRotation = transform.eulerAngles.x;
-        Debug.Log("Current Rotation: " + currentWheelRotation);
+      
+        currentWheelRotation = transform.eulerAngles.z;
+        if (currentWheelRotation > 180f)
+        {
+            currentWheelRotation -= 360f;
+        }
+        // Debug.Log("Current Rotation: " + currentWheelRotation);
+      
         // CheckRotationBounds();
     }
 
-    private void CheckRotationBounds()
-    {
-        if(currentWheelRotation > maxLeftRotationAngle)
-        {
-            transform.Rotate(Vector3.up,maxLeftRotationAngle, Space.Self );
-        }
-        else if(currentWheelRotation < maxRightRotationAngle)
-        {
-            transform.Rotate(Vector3.up,maxRightRotationAngle, Space.Self );
-        }
-        else
-        {
-            return ;
-        }
-    }
+   
 
     private IEnumerator Rotate()
     {
@@ -55,10 +48,17 @@ public class Rotatable : MonoBehaviour
         while(rotateAllowed ) //&& currentWheelRotation < maxLeftRotationAngle && currentWheelRotation > maxRightRotationAngle
         {
             // apply rotation 
-            rotation *= rotationSpeed;
-            transform.Rotate(Vector3.up,rotation.x , Space.Self);
+            float rotationAmount = rotation.x * rotationSpeed * Time.deltaTime;
+            transform.Rotate(Vector3.up,rotationAmount , Space.Self);
             yield return null;
         }
+         // Snap wheel back to 90 degrees
+        transform.localEulerAngles = new Vector3(
+            90f,
+            transform.localEulerAngles.y,
+            transform.localEulerAngles.z
+        );
+
     
     }
 }
