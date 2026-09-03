@@ -24,7 +24,7 @@ public class watchtime : MonoBehaviour {
 
     /// resets the watch
     [ContextMenu("reset")]
-    void reset() {
+    public void reset() {
         frame_time = 0;
         real_time = 0f;
         partial_time = 0f;
@@ -37,7 +37,7 @@ public class watchtime : MonoBehaviour {
 
     /// pauses partial_time
     [ContextMenu("pause")]
-    void pause() {
+    public void pause() {
         if (paused) unpause();
         paused = true;
         paused_at_time = Time.realtimeSinceStartup;
@@ -45,7 +45,7 @@ public class watchtime : MonoBehaviour {
 
     /// resumes partial_time
     [ContextMenu("unpause")]
-    void unpause() {
+    public void unpause() {
         if (!paused) pause();
         paused = false;
         paused_time += Time.realtimeSinceStartup-paused_at_time;
@@ -53,7 +53,7 @@ public class watchtime : MonoBehaviour {
     }
 
     /// updates all times except for frame_time, with respect to pause state
-    void partial_update() {
+    public void partial_update() {
         real_time = Time.realtimeSinceStartup-reset_time;
         is_paused = paused;
         if (!paused) {
@@ -61,23 +61,23 @@ public class watchtime : MonoBehaviour {
         }
     }
 
-    int partial_millis() {
+    public int partial_millis() {
         return (int) ((partial_time*1000f)%1000f);
     }
 
-    int partial_secs() {
+    public int partial_secs() {
         return (int) ((partial_time)%60f);
     }
     
-    int partial_mins() {
+    public int partial_mins() {
         return (int) ((partial_time/60f)%60f);
     }
     
-    int partial_hours() {
+    public int partial_hours() {
         return (int) ((partial_time/60f/60f)%60f);
     }
 
-    string formated_time() {
+    public string formated_time() {
         string temp = show_millis ? "."+partial_millis() : "";
         temp = partial_secs() + temp;
         int mins = partial_mins();
