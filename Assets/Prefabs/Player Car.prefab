@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8879591219206104164}
   - component: {fileID: 7207183152947807956}
   - component: {fileID: 8371917792571682556}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,6 +34,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7000890418011820528}
   - {fileID: 9170411996434775557}
   - {fileID: 6107597141632876169}
   - {fileID: 7202033952920663667}
@@ -74,7 +75,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719889266169553241}
   serializedVersion: 5
-  m_Mass: 100
+  m_Mass: 1000
   m_LinearDamping: 0.05
   m_AngularDamping: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -184,7 +185,7 @@ GameObject:
   - component: {fileID: 5980354200558972874}
   - component: {fileID: 6343517757326197913}
   - component: {fileID: 8759369396916506380}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FR_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +315,7 @@ GameObject:
   - component: {fileID: 4712541155788590408}
   - component: {fileID: 1345512870784402040}
   - component: {fileID: 7879811640276657352}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BL_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +444,7 @@ GameObject:
   - component: {fileID: 6151185672509588302}
   - component: {fileID: 7836230104578149093}
   - component: {fileID: 3445110019066984843}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: brTailLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2607704354682357265}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tail Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +605,7 @@ GameObject:
   - component: {fileID: 4661224914618256948}
   - component: {fileID: 6223540011846343518}
   - component: {fileID: 1256490403081986832}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BR_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,6 +723,97 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!1 &8685273211170589090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7000890418011820528}
+  - component: {fileID: 1727862875034011237}
+  m_Layer: 1
+  m_Name: Minimap Marker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7000890418011820528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8685273211170589090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49960384, y: 0.5034905, z: -0.50037175, w: 0.49650916}
+  m_LocalPosition: {x: 0, y: 8.11, z: -0.56}
+  m_LocalScale: {x: 2.035276, y: 2.035276, z: 2.035276}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1027536198633447414}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!212 &1727862875034011237
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8685273211170589090}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 1142108277, guid: 9f13153339a82224ea695fcfb6ef2586, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6, y: 6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &8903757026558892530
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +825,7 @@ GameObject:
   - component: {fileID: 5265617542701733948}
   - component: {fileID: 5466216928616289813}
   - component: {fileID: 540280823416013536}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: blTailLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +953,7 @@ GameObject:
   - component: {fileID: 1019056495033679040}
   - component: {fileID: 6742879760218124357}
   - component: {fileID: 4105699630377104554}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FL_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
