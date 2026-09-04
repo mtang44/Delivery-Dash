@@ -12,6 +12,8 @@ public class arrow_manager : MonoBehaviour {
     private List<int> free_arrows = new List<int>();
     private List<int> unused_arrows = new List<int>();
 
+    public OrderableData[] order_repository;
+
     void Start() {
         foreach (Transform child in transform) {
             ExpireTime timer = child.gameObject.GetComponent<ExpireTime>();
@@ -48,6 +50,12 @@ public class arrow_manager : MonoBehaviour {
         }
         free_arrows.Add(id);
         arrows[id].hide();
+    }
+
+    [System.Serializable]
+    public class OrderableData {
+        public OrderType typ;
+        public Sprite sprite;
     }
 }
 
@@ -91,4 +99,8 @@ public class Arrow {
     public void show() {
         host.SetActive(true);
     }
+}
+
+public enum OrderType {
+    Pizza, Sandwich, StirfryNoodles, Soup
 }
