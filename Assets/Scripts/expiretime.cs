@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-public class expiretime : MonoBehaviour {
+public class ExpireTime : MonoBehaviour {
     public float default_time = 25f;
     public bool use_callback = true;
 
@@ -11,20 +11,30 @@ public class expiretime : MonoBehaviour {
     float left_time = 0f;
     bool paused = false;
 
-    Action callback = () => {
+    public Action callback = () => {
         Debug.Log("callback action not set on expiretime");
     };
 
     /// resets the countdown
     [ContextMenu("reset")]
     public void reset() {reset(default_time);}
+    [ContextMenu("reset paused")]
+    public void reset_paused() {reset_paused(default_time);}
 
     public void reset(float left) {
         left_time = left;
         reset_time = Time.realtimeSinceStartup;
-        paused_at_time = Time.realtimeSinceStartup;
+        paused_at_time = reset_time;
         paused_time = 0f;
         paused = false;
+    }
+
+    public void reset_paused(float left) {
+        left_time = left;
+        reset_time = Time.realtimeSinceStartup;
+        paused_at_time = reset_time;
+        paused_time = 0f;
+        paused = true;
     }
 
     /// calls callback while the timer is up
@@ -80,6 +90,6 @@ public class expiretime : MonoBehaviour {
     void Update() {
         partial_update();
 
-        Debug.Log(""+left()+":"+left_unit());
+        // Debug.Log(""+left()+":"+left_unit());
     }
 }

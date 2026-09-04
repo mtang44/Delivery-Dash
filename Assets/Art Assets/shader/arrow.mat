@@ -116,10 +116,11 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     - _circle_size: 0.1
-    - _outline_p: 0.06
-    - _outline_w: 0.05
+    - _flip: 1
+    - _outline_p: 0.07
+    - _outline_w: 0.02
     - _progress: 1
-    - _progress_rotates: 1
+    - _progress_rotates: 0
     - _rotation: 0
     - _smoothing: 0.005
     - _triangle_oh: 0.3
@@ -128,7 +129,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _back_fill_c: {r: 0.91194963, g: 0.91194963, b: 0.91194963, a: 1}
+    - _back_fill_c: {r: 0.9308176, g: 0.9308176, b: 0.9308176, a: 1}
     - _end: {r: 1, g: 0, b: 0, a: 1}
     - _outline: {r: 1, g: 1, b: 1, a: 1}
     - _start: {r: 0.0008733273, g: 1, b: 0, a: 1}
