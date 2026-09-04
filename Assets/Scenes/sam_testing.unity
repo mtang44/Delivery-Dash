@@ -609,6 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8388b7cf811790d4a88bf10503e7e55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  locations: {fileID: 1380273761}
   order_repository:
   - typ: 0
     sprite: {fileID: 21300000, guid: 01b6506ce62de0148890c4613c468bac, type: 3}

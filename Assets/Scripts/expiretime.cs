@@ -1,3 +1,5 @@
+//@cpf
+
 using UnityEngine;
 using System;
 
@@ -89,7 +91,5 @@ public class ExpireTime : MonoBehaviour {
 
     void Update() {
         partial_update();
-
-        // Debug.Log(""+left()+":"+left_unit());
     }
 }
