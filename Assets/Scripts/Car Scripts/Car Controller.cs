@@ -46,7 +46,7 @@ public class CarController : MonoBehaviour
         currentAcceleration = acceleration * controls.Player.Move.ReadValue<Vector2>().y; 
        
 
-        Debug.Log(controls.Player.Move.ReadValue<Vector2>().y + " | CA:  " + currentAcceleration);
+        // Debug.Log(controls.Player.Move.ReadValue<Vector2>().y + " | CA:  " + currentAcceleration);
         frontRight.motorTorque = currentAcceleration;
         frontLeft.motorTorque = currentAcceleration;
 
