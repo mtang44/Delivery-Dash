@@ -4,7 +4,7 @@ public class CarController : MonoBehaviour
 {
     private CarBasicMovement controls;
 
-    [SerializeField] Rotatable streeringWheel;
+    [SerializeField] SteeringWheel streeringWheel;
     [SerializeField] float acceleration = 300f;
     [SerializeField] float breakingForce = 300f;
     [SerializeField] float maxTurnAngle = 30f;
