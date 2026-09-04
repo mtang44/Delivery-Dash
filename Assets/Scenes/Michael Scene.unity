@@ -5201,6 +5201,22 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 7000890418011820528, guid: fbe63dd745b05e747922192ae7726024, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.126591
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000890418011820528, guid: fbe63dd745b05e747922192ae7726024, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.126591
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000890418011820528, guid: fbe63dd745b05e747922192ae7726024, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.126591
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000890418011820528, guid: fbe63dd745b05e747922192ae7726024, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00000022363
+      objectReference: {fileID: 0}
     - target: {fileID: 7325155308133312901, guid: fbe63dd745b05e747922192ae7726024, type: 3}
       propertyPath: progress
       value: 0.99
