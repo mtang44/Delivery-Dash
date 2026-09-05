@@ -29,8 +29,8 @@ public class arrow_manager : MonoBehaviour {
 
     void Start() {
         foreach (Transform child in transform) {
-            ExpireTime timer = child.gameObject.GetComponent<ExpireTime>();
-            ArrowControl ctl = child.gameObject.GetComponent<ArrowControl>();
+            ExpireTime timer = child.gameObject.GetComponentInChildren<ExpireTime>(true);
+            ArrowControl ctl = child.gameObject.GetComponentInChildren<ArrowControl>(true);
             if (timer == null || ctl == null) {
                 Debug.LogError("arrow is missing either ExpireTime or ArrowControl");
                 continue;
