@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::arrow_material_control
   progress: 0
   rotation: 0
-  image: {fileID: 0}
+  image: {fileID: 2069514667988045835}
 --- !u!114 &4443110855272523715
 MonoBehaviour:
   m_ObjectHideFlags: 0
