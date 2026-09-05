@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CarController : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class CarController : MonoBehaviour
     [SerializeField] float breakingForce = 300f;
     [SerializeField] float maxTurnAngle = 30f;
     [SerializeField] float maxWheelRotation = 90f;
+    [SerializeField] float minDriftAngle = 25f;
+    private bool isDrifting = false;
+
 
     [SerializeField] WheelCollider frontRight;
     [SerializeField] WheelCollider frontLeft;
@@ -20,9 +24,25 @@ public class CarController : MonoBehaviour
     [SerializeField] Transform backRightWheelMesh;
     [SerializeField] Transform backLeftWheelMesh;
 
+    public AudioClip carEngineSFX;
+    public AudioClip crunchSFX;
+    public AudioClip impactSFX;
+    public AudioClip driftSFX;
+
+
+    private AudioManager audioManager;
+
     float currentAcceleration = 0; 
     float currentBreakForce = 0; 
     float currentTurnAngle = 0; 
+    void Start()
+    {
+        if(audioManager == null)
+        {
+            audioManager = AudioManager.Instance;
+            StartCoroutine(PlayEngineSFX());
+        }
+    }
     void Awake()
     {
         controls = new CarBasicMovement();
@@ -77,6 +97,9 @@ public class CarController : MonoBehaviour
         SetWheel(frontLeft, frontLeftWheelMesh);
         SetWheel(backRight, backRightWheelMesh);
         SetWheel(backLeft, backLeftWheelMesh);
+        Debug.Log("A: " + currentAcceleration + " | T: " + currentTurnAngle);
+        StartCoroutine(checkDrifting());
+       
     }
 
     void SetWheel(WheelCollider wheelCol, Transform wheelMesh)
@@ -86,4 +109,31 @@ public class CarController : MonoBehaviour
         wheelCol.GetWorldPose(out pos, out rotation);
         wheelMesh.rotation = rotation;
     }
+    
+    IEnumerator PlayEngineSFX()
+    {
+        while(true)
+        {
+            audioManager.PlaySFX(carEngineSFX);
+            yield return new WaitForSeconds(3f);
+        }
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        audioManager.PlaySFX(crunchSFX);
+        audioManager.PlaySFX(impactSFX);
+    }
+    IEnumerator checkDrifting()
+    {
+
+        if(currentAcceleration == acceleration && Mathf.Abs(currentTurnAngle) >= minDriftAngle && !isDrifting)
+        {
+            isDrifting = true;
+            Debug.Log("Drifting");
+            audioManager.PlaySFX(driftSFX);
+            yield return new WaitForSeconds(1f);
+            isDrifting = false;
+        }
+    }
+       
 }

@@ -1,9 +1,11 @@
+//@cpf
+
 using UnityEngine;
 
 public class ArrowControl : MonoBehaviour {
     public float progress = 0f;
     public float rotation = 0f;
-    public SpriteRenderer image;
+    public SpriteRenderer image = null;
 
     MeshRenderer rend;
     MaterialPropertyBlock block;
@@ -12,7 +14,7 @@ public class ArrowControl : MonoBehaviour {
         if (image == null) image = GetComponentInChildren<SpriteRenderer>();
     }
 
-    void set_image(Sprite img) {
+    public void set_image(Sprite img) {
         image.sprite = img;
     }
 
