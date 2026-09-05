@@ -50,7 +50,7 @@ public class ExpireTime : MonoBehaviour {
     /// pauses
     [ContextMenu("pause")]
     public void pause() {
-        if (paused) unpause();
+        if (paused) return;
         paused = true;
         paused_at_time = Time.realtimeSinceStartup;
     }
@@ -58,7 +58,7 @@ public class ExpireTime : MonoBehaviour {
     /// resumes
     [ContextMenu("unpause")]
     public void unpause() {
-        if (!paused) pause();
+        if (!paused) return;
         paused = false;
         paused_time += Time.realtimeSinceStartup-paused_at_time;
         partial_update();

@@ -5,6 +5,7 @@ using System.Linq;
 
 public class location : MonoBehaviour {
     public Transform action_location;
+    public float activation_range = 2f;
     public OrderType[] requested;
     public OrderType[] provided;
 
