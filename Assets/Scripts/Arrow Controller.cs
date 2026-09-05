@@ -19,7 +19,7 @@ public class ArrowController : MonoBehaviour
         Vector3 targetDirection = destination.position - transform.position;
         Vector3 turnDirection =  Vector3.RotateTowards(transform.forward, targetDirection, step, 0.0f);
         transform.rotation = Quaternion.LookRotation(turnDirection);
-        distanceTMP.GetComponent<TextMeshProUGUI>().text = "" + findDistanceToTarget() + "M";
+        // distanceTMP.GetComponent<TextMeshProUGUI>().text = "" + findDistanceToTarget() + "M";
        
     }
 
