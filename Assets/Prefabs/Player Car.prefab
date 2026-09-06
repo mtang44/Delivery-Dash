@@ -142,8 +142,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2491002, y: 1.3395523, z: 3.781497}
-  m_Center: {x: -0.0000008344736, y: 1.0089116, z: 0.09951556}
+  m_Size: {x: 0.10580073, y: 1.3395525, z: 5.1668873}
+  m_Center: {x: 0.06255372, y: 1.0089284, z: 0.18073799}
 --- !u!33 &7207183152947807956
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -502,6 +502,12 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 0d6e8c5268548054aa8741936a6f5dba, type: 3}
   failed_orders: 0
   passed_orders: 0
+  tmpSpawner: {fileID: 0}
+  audioManager: {fileID: 0}
+  moneySFX: {fileID: 0}
+  orderFailedSFX: {fileID: 0}
+  doorBellSFX: {fileID: 0}
+  orderPickedUpSFX: {fileID: 0}
 --- !u!1 &1098801714575165827
 GameObject:
   m_ObjectHideFlags: 0
