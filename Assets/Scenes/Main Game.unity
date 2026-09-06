@@ -12498,6 +12498,8 @@ GameObject:
   - component: {fileID: 1272799845}
   - component: {fileID: 1272799847}
   - component: {fileID: 1272799846}
+  - component: {fileID: 1272799849}
+  - component: {fileID: 1272799848}
   m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -12624,6 +12626,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272799844}
   m_CullTransparentMesh: 1
+--- !u!114 &1272799848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272799844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5724d969b5a71240b5ccad31abd12d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::watchtime
+  frame_time: 0
+  real_time: 0
+  partial_time: 0
+  is_paused: 0
+  show_millis: 0
+  force_mins: 0
+  force_hours: 0
+--- !u!114 &1272799849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272799844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c493d2334810bee47ae16767ea195695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  mesh: {fileID: 0}
+  time: {fileID: 0}
 --- !u!1 &1287909130
 GameObject:
   m_ObjectHideFlags: 0

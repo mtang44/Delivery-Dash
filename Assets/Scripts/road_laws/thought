@@ -1,0 +1,25 @@
+road node stores reference to the next road form and the prior road form
+as well as the id that the road form assigned to it
+
+road follower moves with a speed to the form.next().position, every frame it checks if it can move
+towards the targeted position that frame, it does not move if it cannot
+
+# road node
+
+* ref to position
+* ref to next
+* ref to prev
+
+# road form
+
+* list of nodes
+* function next(node_id) -> node, must always return the same thing
+* function full() -> bool, returns if the follower can enter the segment
+* function entered(node_id) -> ticket, called when a follower enters the segment
+* function left(node_id, ticket), called when a follower exits the segment
+* function can_move_to(node_id, position, ticket) -> bool, whether the position is available 
+
+# road follower
+
+* ref to entry node
+* ref to current form
