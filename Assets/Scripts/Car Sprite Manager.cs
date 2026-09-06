@@ -33,8 +33,8 @@ public class CarSpriteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentRotation = transform.eulerAngles.y;
-        Debug.Log("Y: " + currentRotation);        
+        currentRotation = transform.eulerAngles.y % 360;
+        // Debug.Log("Y: " + currentRotation);        
         checkCarDirection();
         setCarSprite();
     }
@@ -45,7 +45,7 @@ public class CarSpriteManager : MonoBehaviour
     {
         if(currentRotation >= 345 || currentRotation < 29)
         {
-            currentDirection = direction.west;
+            currentDirection = direction.south;
         }
         else if(currentRotation >= 30 && currentRotation <= 75)
         {
@@ -65,12 +65,17 @@ public class CarSpriteManager : MonoBehaviour
         }
         else if(currentRotation >= 210 && currentRotation <= 240)
         {
-            currentDirection = direction.NorthWest;
+            currentDirection = direction.northWest;
+        }
+        else if(currentRotation >= 241 && currentRotation <= 285)
+        {
+            currentDirection = direction.west;
         }
         else 
         {
-            currentDirection = direction.east;
+            currentDirection = direction.southWest;
         }
+
     }
     void setCarSprite()
     {
