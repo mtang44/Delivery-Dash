@@ -127,8 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotatable
   degreeTurnRate: 5
-  destination: {fileID: 0}
   distanceTMP: {fileID: 0}
+  manager: {fileID: 0}
+  control: {fileID: 4957231044342665624}
 --- !u!1 &6528585262143021806
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +352,7 @@ MonoBehaviour:
   progress: 0
   rotation: 0
   image: {fileID: 0}
+  arrow_id: 0
 --- !u!114 &4443110855272523715
 MonoBehaviour:
   m_ObjectHideFlags: 0
