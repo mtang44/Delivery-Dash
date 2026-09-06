@@ -35,6 +35,7 @@ public class CarController : MonoBehaviour
     float currentAcceleration = 0; 
     float currentBreakForce = 0; 
     float currentTurnAngle = 0; 
+
     void Start()
     {
         if(audioManager == null)
@@ -46,6 +47,7 @@ public class CarController : MonoBehaviour
     void Awake()
     {
         controls = new CarBasicMovement();
+        streeringWheel = FindFirstObjectByType<SteeringWheel>();
     }
 
     void OnEnable()

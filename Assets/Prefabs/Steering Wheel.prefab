@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3844636022774371064}
   - component: {fileID: 8117724824301733962}
   - component: {fileID: 4249204648949859432}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1985,7 +1985,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 15
+  m_VersionIndex: 21
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2088,7 +2088,7 @@ GameObject:
   - component: {fileID: 8758028332868584839}
   - component: {fileID: 2173048434114419257}
   - component: {fileID: 3754961037861022290}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10622,7 +10622,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 15
+  m_VersionIndex: 21
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10678,7 +10678,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: b1931fc835904e743897da36e6e32a2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10723,7 +10723,7 @@ GameObject:
   - component: {fileID: 4708345456530352711}
   - component: {fileID: 3464922017015066350}
   - component: {fileID: 1443424146691051657}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12695,7 +12695,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 15
+  m_VersionIndex: 21
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12794,7 +12794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4932437702364120109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Steering Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12809,15 +12809,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2743578598315635296}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 264.27496, y: 81.8, z: 108.863106}
+  m_LocalRotation: {x: -0.17668274, y: -0, z: -0, w: 0.9842679}
+  m_LocalPosition: {x: -33.2, y: 339.2426, z: 367.0497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3025594796601254481}
   - {fileID: 3407732140369233298}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -20.353, y: 0, z: 0}
 --- !u!1 &3723102154816623557
 GameObject:
   m_ObjectHideFlags: 0
@@ -12832,7 +12832,7 @@ GameObject:
   - component: {fileID: 2276958016406723184}
   - component: {fileID: 8260352947629195895}
   - component: {fileID: 5624401165132518820}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 'Wheel '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12848,8 +12848,8 @@ Transform:
   m_GameObject: {fileID: 3723102154816623557}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 5, z: 10}
+  m_LocalPosition: {x: 0, y: 0.07, z: -0}
+  m_LocalScale: {x: 6, y: 5, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9097015615914689687}
@@ -18664,7 +18664,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1057
+  m_VersionIndex: 1063
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18819,7 +18819,7 @@ GameObject:
   - component: {fileID: 2123239322948144918}
   - component: {fileID: 2630813584348731073}
   - component: {fileID: 767759922864652392}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18836,7 +18836,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.6343768, y: -0, z: -0, w: 0.77302396}
   m_LocalPosition: {x: 0.32504272, y: -2.300003, z: -10.450012}
-  m_LocalScale: {x: 2.5, y: 10.334355, z: 2.4582071}
+  m_LocalScale: {x: 1.5, y: 10.334355, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4932437702364120109}
@@ -20791,7 +20791,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 15
+  m_VersionIndex: 21
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -20916,7 +20916,7 @@ GameObject:
   - component: {fileID: 3732239460544459013}
   - component: {fileID: 7842557711665775119}
   - component: {fileID: 707691082554760172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22888,7 +22888,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 15
+  m_VersionIndex: 21
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

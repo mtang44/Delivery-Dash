@@ -9210,7 +9210,7 @@ PrefabInstance:
     - target: {fileID: 8378617217766478345, guid: fbe63dd745b05e747922192ae7726024, type: 3}
       propertyPath: streeringWheel
       value: 
-      objectReference: {fileID: 2144844347}
+      objectReference: {fileID: 0}
     - target: {fileID: 8447183248761207580, guid: fbe63dd745b05e747922192ae7726024, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -26068,17 +26068,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144305099}
   m_CullTransparentMesh: 1
---- !u!114 &2144844347 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5624401165132518820, guid: 651855ca4d0ab4e4085e023625541808, type: 3}
-  m_PrefabInstance: {fileID: 1690195918826867850}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ef50147123deb489592f9f6adf6586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Rotatable
 --- !u!1001 &1690195918826867850
 PrefabInstance:
   m_ObjectHideFlags: 0
