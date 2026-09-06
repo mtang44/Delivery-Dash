@@ -6,6 +6,8 @@ public class ArrowControl : MonoBehaviour {
     public float progress = 0f;
     public float rotation = 0f;
     public SpriteRenderer image = null;
+    [HideInInspector]
+    public int arrow_id;
 
     MeshRenderer rend;
     MaterialPropertyBlock block;

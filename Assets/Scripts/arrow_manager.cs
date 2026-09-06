@@ -36,6 +36,7 @@ public class arrow_manager : MonoBehaviour {
                 continue;
             }
             int id = arrows.Count;
+            ctl.arrow_id = id;
             unused_arrows.Add(id);
             Arrow arrow = new Arrow(timer,ctl,child.gameObject, () => {
                 Debug.Log("order failed");
@@ -142,6 +143,10 @@ public class arrow_manager : MonoBehaviour {
 
     public float time_at_order(int order) {
         return order_time_offset-MathF.Pow(((float)order)/order_time_scale,1f/order_time_root);
+    }
+
+    public OrderData get_order(int arrow_id) {
+        return active_orders[arrow_id];
     }
 
     [System.Serializable]
