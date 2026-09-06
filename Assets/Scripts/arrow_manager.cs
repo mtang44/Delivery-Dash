@@ -28,6 +28,7 @@ public class arrow_manager : MonoBehaviour {
     public int passed_orders = 0;
     
     public TMPSpawner tmpSpawner;
+    public GameOverManager gameOverManager;
     public AudioManager audioManager;
     public AudioClip moneySFX;
     public AudioClip orderFailedSFX;
@@ -77,6 +78,10 @@ public class arrow_manager : MonoBehaviour {
     }
 
     void Update() {
+        if(failed_orders >= 1)
+        {
+            gameOverManager.GameOver(passed_orders);
+        }
         while (active_arrows < arrows_at_order(passed_orders)) release_arrow();
 
         foreach (Arrow arrow in arrows) {
