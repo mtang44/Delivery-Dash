@@ -97,7 +97,7 @@ public class CarController : MonoBehaviour
         SetWheel(frontLeft, frontLeftWheelMesh);
         SetWheel(backRight, backRightWheelMesh);
         SetWheel(backLeft, backLeftWheelMesh);
-        Debug.Log("A: " + currentAcceleration + " | T: " + currentTurnAngle);
+        // Debug.Log("A: " + currentAcceleration + " | T: " + currentTurnAngle);
         StartCoroutine(checkDrifting());
        
     }
@@ -129,7 +129,7 @@ public class CarController : MonoBehaviour
         if(currentAcceleration == acceleration && Mathf.Abs(currentTurnAngle) >= minDriftAngle && !isDrifting)
         {
             isDrifting = true;
-            Debug.Log("Drifting");
+            // Debug.Log("Drifting");
             audioManager.PlaySFX(driftSFX);
             yield return new WaitForSeconds(1f);
             isDrifting = false;
