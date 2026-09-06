@@ -26,8 +26,20 @@ public class arrow_manager : MonoBehaviour {
     public OrderableData[] order_repository;
     public int failed_orders = 0;
     public int passed_orders = 0;
+    
+    public TMPSpawner tmpSpawner;
+    public AudioManager audioManager;
+    public AudioClip moneySFX;
+    public AudioClip orderFailedSFX;
+    public AudioClip doorBellSFX;
+    public AudioClip orderPickedUpSFX;
 
     void Start() {
+        // added in audio manager - MT
+         if(audioManager == null)
+        {
+            audioManager = AudioManager.Instance;
+        }
         foreach (Transform child in transform) {
             ExpireTime timer = child.gameObject.GetComponentInChildren<ExpireTime>(true);
             ArrowControl ctl = child.gameObject.GetComponentInChildren<ArrowControl>(true);
@@ -40,6 +52,7 @@ public class arrow_manager : MonoBehaviour {
             unused_arrows.Add(id);
             Arrow arrow = new Arrow(timer,ctl,child.gameObject, () => {
                 Debug.Log("order failed");
+                audioManager.PlaySFX(orderFailedSFX);
                 failed(id);
             },id);
             arrow.unset();
@@ -76,12 +89,18 @@ public class arrow_manager : MonoBehaviour {
 
                         //NONTS: this is where you would change arrow pointing location to where.position
                         data.has_been_picked_up = true;
+                        audioManager.PlaySFX(orderPickedUpSFX);
+                        tmpSpawner.spawnUI("Order Picked Up");
                         Debug.Log("order picked up");
                     }
                 } else {
                     Transform where = data.delivery.action_location;
                     if (Vector3.Distance(where.position, player.position) <= data.delivery.activation_range) {
                         Debug.Log("order passed");
+                        tmpSpawner.spawnUI("Order Delivered");
+                        audioManager.PlaySFX(moneySFX);
+                        audioManager.PlaySFX(doorBellSFX);
+                        
                         passed(arrow.id);
                     }
                 }
